@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Profile Viewer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Search Section -->
+        <div class="search-section">
+            <div class="search-box">
+                <input 
+                    type="text" 
+                    id="username-input" 
+                    placeholder="Enter GitHub username..."
+                    class="search-input"
+                >
+                <button id="search-btn" class="search-btn">Search</button>
+            </div>
+            <p class="search-hint">Or leave empty to view your own profile</p>
+        </div>
+
+        <!-- Loading Indicator -->
+        <div id="loading" class="loading" style="display: none;">
+            <div class="spinner"></div>
+            <p>Loading profile...</p>
+        </div>
+
+        <!-- Error Message -->
+        <div id="error" class="error-message" style="display: none;"></div>
+
+        <!-- Profile Section -->
+        <div id="profile" class="profile" style="display: none;">
+            <!-- Header Section -->
+            <div class="profile-header">
+                <img id="avatar" src="" alt="Avatar" class="avatar">
+                <div class="profile-info">
+                    <h1 id="name"></h1>
+                    <p id="login" class="username"></p>
+                    <p id="bio" class="bio"></p>
+                    <div class="location-company">
+                        <span id="location" class="location"></span>
+                        <span id="company" class="company"></span>
+                    </div>
+                    <a id="profile-link" href="#" class="github-link" target="_blank">View on GitHub</a>
+                </div>
+                <div class="profile-stats">
+                    <div class="stat">
+                        <div class="stat-number" id="followers">0</div>
+                        <div class="stat-label">Followers</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number" id="following">0</div>
+                        <div class="stat-label">Following</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number" id="repos">0</div>
+                        <div class="stat-label">Repositories</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number" id="gists">0</div>
+                        <div class="stat-label">Gists</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Info -->
+            <div class="profile-details">
+                <div class="detail-item" id="twitter-item" style="display: none;">
+                    <span class="label">Twitter:</span>
+                    <a id="twitter" href="" target="_blank"></a>
+                </div>
+                <div class="detail-item" id="blog-item" style="display: none;">
+                    <span class="label">Blog:</span>
+                    <a id="blog" href="" target="_blank"></a>
+                </div>
+                <div class="detail-item" id="created-item">
+                    <span class="label">Joined:</span>
+                    <span id="created"></span>
+                </div>
+                <div class="detail-item" id="updated-item">
+                    <span class="label">Last Updated:</span>
+                    <span id="updated"></span>
+                </div>
+            </div>
+
+            <!-- Repositories Section -->
+            <div class="repositories-section">
+                <h2>Recent Repositories</h2>
+                <div id="repositories" class="repositories-grid"></div>
+                <button id="load-more-repos" class="load-more-btn" style="display: none;">Load More</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
