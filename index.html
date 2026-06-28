@@ -3,98 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GitHub Profile Viewer</title>
+    <title>Alok Tiwari - Portfolio</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <!-- Search Section -->
-        <div class="search-section">
-            <div class="search-box">
-                <input 
-                    type="text" 
-                    id="username-input" 
-                    placeholder="Enter GitHub username..."
-                    class="search-input"
-                >
-                <button id="search-btn" class="search-btn">Search</button>
+        <!-- Navigation -->
+        <nav class="navbar">
+            <div class="nav-brand">Alok Tiwari</div>
+            <div class="nav-links">
+                <a href="#profile" class="nav-link">Profile</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#contact" class="nav-link">Contact</a>
             </div>
-            <p class="search-hint">Or leave empty to view your own profile</p>
-        </div>
-
-        <!-- Loading Indicator -->
-        <div id="loading" class="loading" style="display: none;">
-            <div class="spinner"></div>
-            <p>Loading profile...</p>
-        </div>
-
-        <!-- Error Message -->
-        <div id="error" class="error-message" style="display: none;"></div>
+        </nav>
 
         <!-- Profile Section -->
-        <div id="profile" class="profile" style="display: none;">
-            <!-- Header Section -->
-            <div class="profile-header">
-                <img id="avatar" src="" alt="Avatar" class="avatar">
-                <div class="profile-info">
-                    <h1 id="name"></h1>
-                    <p id="login" class="username"></p>
-                    <p id="bio" class="bio"></p>
-                    <div class="location-company">
-                        <span id="location" class="location"></span>
-                        <span id="company" class="company"></span>
-                    </div>
-                    <a id="profile-link" href="#" class="github-link" target="_blank">View on GitHub</a>
-                </div>
-                <div class="profile-stats">
-                    <div class="stat">
-                        <div class="stat-number" id="followers">0</div>
-                        <div class="stat-label">Followers</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number" id="following">0</div>
-                        <div class="stat-label">Following</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number" id="repos">0</div>
-                        <div class="stat-label">Repositories</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number" id="gists">0</div>
-                        <div class="stat-label">Gists</div>
+        <section id="profile" class="profile-section">
+            <!-- Hero Section -->
+            <div class="hero">
+                <div class="hero-content">
+                    <h1 class="name">Alok Tiwari</h1>
+                    <p class="title">IIT Madras Student</p>
+                    <p class="tagline">Passionate developer with a focus on creating innovative solutions</p>
+                    <div class="cta-buttons">
+                        <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                        <a href="https://github.com/AlokTiwari23" target="_blank" class="btn btn-secondary">View GitHub</a>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <!-- Additional Info -->
-            <div class="profile-details">
-                <div class="detail-item" id="twitter-item" style="display: none;">
-                    <span class="label">Twitter:</span>
-                    <a id="twitter" href="" target="_blank"></a>
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <div class="section-header">
+                <h2>About Me</h2>
+            </div>
+            <div class="about-content">
+                <div class="info-grid">
+                    <div class="info-card">
+                        <div class="icon">📍</div>
+                        <h3>Location</h3>
+                        <p>Gorakhpur</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="icon">🎓</div>
+                        <h3>Education</h3>
+                        <p>IIT Madras</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="icon">💻</div>
+                        <h3>Focus</h3>
+                        <p>Full Stack Development</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="icon">🚀</div>
+                        <h3>Passion</h3>
+                        <p>Building innovative solutions</p>
+                    </div>
                 </div>
-                <div class="detail-item" id="blog-item" style="display: none;">
-                    <span class="label">Blog:</span>
-                    <a id="blog" href="" target="_blank"></a>
+                <p class="about-text">
+                    I'm a dedicated student at IIT Madras with a passion for software development and problem-solving. 
+                    I enjoy building projects, exploring new technologies, and collaborating with other developers to create impactful applications.
+                </p>
+            </div>
+        </section>
+
+        <!-- GitHub Repositories Section -->
+        <section class="repositories-section">
+            <div class="section-header">
+                <h2>Recent Projects on GitHub</h2>
+            </div>
+            <div id="repositories" class="repositories-grid"></div>
+            <button id="load-more-repos" class="load-more-btn" style="display: none;">Load More</button>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <div class="section-header">
+                <h2>Get In Touch</h2>
+            </div>
+            <div class="contact-content">
+                <div class="contact-item">
+                    <span class="contact-label">📧 Email (College):</span>
+                    <a href="mailto:24f2007304@ds.study.iitm.ac.in" class="contact-link">24f2007304@ds.study.iitm.ac.in</a>
                 </div>
-                <div class="detail-item" id="created-item">
-                    <span class="label">Joined:</span>
-                    <span id="created"></span>
+                <div class="contact-item">
+                    <span class="contact-label">📱 Phone:</span>
+                    <a href="tel:+916388562472" class="contact-link">+91 6388562472</a>
                 </div>
-                <div class="detail-item" id="updated-item">
-                    <span class="label">Last Updated:</span>
-                    <span id="updated"></span>
+                <div class="contact-item">
+                    <span class="contact-label">🐙 GitHub:</span>
+                    <a href="https://github.com/AlokTiwari23" target="_blank" class="contact-link">@AlokTiwari23</a>
                 </div>
             </div>
+        </section>
 
-            <!-- Repositories Section -->
-            <div class="repositories-section">
-                <h2>Recent Repositories</h2>
-                <div id="repositories" class="repositories-grid"></div>
-                <button id="load-more-repos" class="load-more-btn" style="display: none;">Load More</button>
-            </div>
-        </div>
-    </div>
-
-    <script src="script.js"></script>
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2026 Alok Tiwari. All rights reserved.</p>
+        </footer>
 </body>
 </html>
